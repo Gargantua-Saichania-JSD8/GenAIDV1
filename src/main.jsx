@@ -19,7 +19,7 @@ import ProductDetail from './page/ProductDetail';
 import Profile from './page/Profile';
 import Register from './page/Register';
 import Search from './page/Search';
-
+import Productprovider from './context/productprovider';
 
 
 const router = createBrowserRouter([
@@ -74,6 +74,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Productprovider>
     <RouterProvider router={router} />
+    </Productprovider>
   </React.StrictMode>
 );
