@@ -41,18 +41,28 @@ const ProductsByCategoryProvider = ({ children }) => {
   // Fetch products by category
   const fetchProductsByCategory = useCallback(
     async (category, filters = {}) => {
+
+      if (!category) return;
       setLoading(true);
       setError(null);
-      console.log("Hello" )
+      console.log("Fetching products for category:", category);
+      
       try {
         if (!backendUrl) throw new Error("Backend URL is missing");
+        
         const response = await axios.get(
           `${backendUrl}/api/categories/filter-by-category`,
-          { params: { category, ...filters } }
+          { params: { category: category , ...filters } }
         );
+        console.log("param cate in contenxt ",category)
+        console.log("Response from API:", response.data);
         
         if (Array.isArray(response.data)) {
-          setProducts(response.data);
+          setProducts(response.data);  // Directly set the array
+          console.log("Products set:", response.data);
+        } else if (response.data?.products) {
+          setProducts(response.data.products);  // Handle object with 'products' key
+          console.log("Products set from response object:", response.data.products);
         } else {
           throw new Error("Invalid data structure received from API");
         }
@@ -63,8 +73,9 @@ const ProductsByCategoryProvider = ({ children }) => {
         setLoading(false);
       }
     },
-    [backendUrl]
+    [backendUrl]  // Dependency array; only re-create function when 'backendUrl' changes
   );
+  
 
   // Fetch categories on mount
   useEffect(() => {
@@ -75,6 +86,7 @@ const ProductsByCategoryProvider = ({ children }) => {
   return (
     <ProductsByCategoryContext.Provider
       value={{
+        products,
         categories, // Expose categories
         products, // Expose products
         fetchCategoriesWithProducts, // Expose function to fetch categories
