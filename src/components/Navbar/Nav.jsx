@@ -9,7 +9,7 @@ import { PiPillFill } from "react-icons/pi";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSearchProduct } from "../../context/SearchProductProvider.jsx";
-
+import genaid from "/public/img/logo-genaid.png";
 const Nav = ({ logo, back, search, title, cart }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const { searchResults, loading, error, searchProducts } = useSearchProduct();
@@ -128,7 +128,7 @@ const Nav = ({ logo, back, search, title, cart }) => {
           <div className="flex items-center justify-between p-4">
             <Link to="/">
               <div className="nav-logo">
-                <img src="/public/img/logo-genaid.png" alt="" className="h-12" />
+                <img src={genaid} alt="" className="h-12" />
               </div>
             </Link>
             <div className="flex-1 mx-8 relative">
