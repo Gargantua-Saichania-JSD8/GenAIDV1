@@ -6,7 +6,7 @@ import CardProduct from "../components/Product/CardProduct";
 import { Link } from "react-router-dom";
 import { CategoryContext } from "../context/CategoryProvider";
 import { ProductContext } from "../context/ProductProvider";
-import About from "../components/footer/about";
+import About from "../components/footer/About";
 
 const Home = () => {
   const { categories, loading: categoryLoading, error: categoryError } =
