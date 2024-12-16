@@ -16,7 +16,7 @@ const about = () => {
         </nav>
         <nav>
           <h6 className="footer-title">บริษัท</h6>
-          <a className="link link-hover">ติดต่อ</a>
+          <a className="link link-hover">ติดต่อ: 089-123-4567 </a>
           <a className="link link-hover">งาน</a>
           <a className="link link-hover">ข่าวสาร</a>
         </nav>

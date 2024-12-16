@@ -15,7 +15,7 @@ const Cart = () => {
 
   const updateTotal = (newTotal) => {
     setTotal(newTotal);
-    console.log("total is ",total)
+    console.log("total is ", total);
   };
 
   useEffect(() => {
@@ -26,6 +26,9 @@ const Cart = () => {
   // useEffect(() => {
   //   setToCheckout([]);
   // }, [total]);
+
+  const { token } = useContext(AuthContext);
+  const isLoggedIn = token !== null;
 
   return (
     <>
@@ -39,17 +42,17 @@ const Cart = () => {
         </div>
         <div className="lg:w-[30%] pb-3 lg:pt-6 text-center">
           <CardSum onTotalUpdate={updateTotal} />
-              <div className="hidden lg:block ">
-          <Link to="/checkout">
-            <button className="bg-ga-primary  text-white rounded-md p-2 w-40 text-xl mt-7">
-              สั่งสินค้า
-            </button>
-          </Link>
-              </div>
+          <div className="hidden lg:block ">
+            
+            <Link to="/checkout">
+              <button className="bg-ga-primary  text-white rounded-md p-2 w-40 text-xl mt-7">
+                สั่งสินค้า
+              </button>
+            </Link>
+          </div>
         </div>
-         <NavMobile checkout total={total} />
+        <NavMobile checkout total={total} />
       </div>
-     
     </>
   );
 };

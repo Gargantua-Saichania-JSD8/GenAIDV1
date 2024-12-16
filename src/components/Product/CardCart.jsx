@@ -14,7 +14,7 @@ const CardCart = ({ cartData, isCheckOut }) => {
 
   // Track the checked state for this specific item
   const isChecked = toCheckout.some((item) => {
-    console.log(`Checking if item with id ${item.productid} is in toCheckout`);
+    console.log(`Checking if item with id ${item.productid} is in to Checkout`);
     return item.productid === cartData.productid;
   });
 

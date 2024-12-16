@@ -157,7 +157,7 @@ const Register = () => {
     <div>
       <Nav back />
 
-      <div className="flex flex-col items-center justify-center min-h-screen lg:flex lg:flex-row lg:gap-1 lg:my-40  ">
+      <div className="flex flex-col items-center justify-center min-h-screen lg:flex lg:flex-row lg:gap-1 lg:py-40  ">
         <section className="flex justify-center items-center mb-5">
           <img src={logo} alt="logo" className="w-[60%] lg:w-[80%]" />
         </section>
@@ -165,7 +165,7 @@ const Register = () => {
   
 
         <form
-          className="bg-white p-16 shadow-xl w-screen  rounded-3xl lg:mr-24 max-w-xl" 
+          className="bg-white p-28 shadow-xl w-[80%]  rounded-3xl lg:mr-24 max-w-xl" 
           onSubmit={handleSubmit}
           autoComplete="off"
         >

@@ -157,7 +157,6 @@ const Nav = ({ logo, back, search, title, cart }) => {
                   <span className="text-sm">รถเข็น</span>
                 </div>
               </NavLink>
-
               <div className="group relative">
                 <NavLink
                   to={isLoggedIn ? null : "/login"}
@@ -171,7 +170,6 @@ const Nav = ({ logo, back, search, title, cart }) => {
                     <span className="text-sm">บัญชี</span>
                   </div>
                 </NavLink>
-
                 {isLoggedIn && (
                   <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 w-32 bg-slate-50 rounded-lg">
                     <Link
