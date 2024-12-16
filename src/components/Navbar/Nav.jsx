@@ -94,7 +94,7 @@ const Nav = ({ logo, back, search, title, cart }) => {
           )}
           {logo && (
             <div className="nav-logo">
-              <img src="/public/img/logo-genaid.png" alt="" className="max-h-10" />
+              <img src={genaid} alt="" className="max-h-10" />
             </div>
           )}
           <div className="flex-grow flex justify-center   relative">
